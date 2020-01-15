@@ -23,7 +23,7 @@
         "friendsofphp/php-cs-fixer": "^2.16"
     },
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "Superbrave\\LoggerBundle\\": "src/"
