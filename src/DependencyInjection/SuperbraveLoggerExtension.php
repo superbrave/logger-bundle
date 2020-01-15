@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * @see http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class LoggerExtension extends Extension
+class SuperbraveLoggerExtension extends Extension
 {
     /**
      * {@inheritdoc}
