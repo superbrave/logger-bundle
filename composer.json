@@ -1,0 +1,36 @@
+{
+    "name": "superbrave/logger-bundle",
+    "description": "A Symfony bundle to log messages to logging providers. Such as Sentry.",
+    "type": "symfony-bundle",
+    "authors": [
+        {
+            "name": "Niels Nijens",
+            "email": "nn@superbrave.nl"
+        },
+        {
+            "name": "Tim van den Oever",
+            "email": "tvdo@superbrave.nl"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "sentry/sentry-symfony": "^3.3",
+        "symfony/config": "^3.4||^4.0||^5.0",
+        "symfony/dependency-injection": "^3.4||^4.0||^5.0"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^3.4||^4.0||^5.0",
+        "friendsofphp/php-cs-fixer": "^2.16"
+    },
+    "license": "MIT license",
+    "autoload": {
+        "psr-4": {
+            "Superbrave\\LoggerBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Superbrave\\LoggerBundle\\Tests\\": "tests/"
+        }
+    }
+}

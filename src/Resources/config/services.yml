@@ -1,0 +1,4 @@
+services:
+  Superbrave\LoggerBundle\Sentry\Logger:
+    arguments:
+      - '@Sentry\State\HubInterface'
