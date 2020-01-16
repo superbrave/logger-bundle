@@ -4,6 +4,6 @@ services:
         autoconfigure: true
         public: false
 
-  Superbrave\LoggerBundle\Logger\Logger:
-      arguments:
-          $adapter: 'Superbrave\LoggerBundle\Adapter\SentryAdapter'
+    Superbrave\LoggerBundle\Logger\Logger:
+        arguments:
+            $adapter: 'Superbrave\LoggerBundle\Adapter\SentryAdapter'
