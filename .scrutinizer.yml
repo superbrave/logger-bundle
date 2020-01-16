@@ -1,0 +1,66 @@
+filter:
+  paths:
+    - src/
+
+  excluded_paths:
+    - tests/
+
+  dependency_paths:
+    - vendor/
+
+build:
+  dependencies:
+    before:
+      - command: 'docker network create public'
+      - command: 'restore-from-cache repository "docker-layers-$SCRUTINIZER_BRANCH" - | docker load'
+        only_if: 'exists-in-cache repository "docker-layers-$SCRUTINIZER_BRANCH"'
+      - command: 'docker build .docker/php-fpm --target=php-scrutinizer -t php-fpm-amqp'
+      - command: 'docker save php-fpm-amqp | store-in-cache repository "docker-layers-$SCRUTINIZER_BRANCH" -'
+      - restore-from-cache repository "dependencies"
+      - restore-from-cache repository "phpunit"
+      - sudo mv /usr/bin/composer.phar /usr/bin/composer && sudo chmod +x /usr/bin/composer
+    after:
+      - store-in-cache repository "dependencies" vendor/
+
+  environment:
+    php:
+      version: 7.2
+    docker:
+      remote_engine: true
+
+    redis: false
+
+  nodes:
+    tests:
+      tests:
+        override:
+          - composer validate
+
+          - ./vendor/bin/php-cs-fixer fix --dry-run -v
+
+          - command: './vendor/bin/simple-phpunit --coverage-clover=coverage-clover.xml'
+            coverage:
+              file: 'coverage-clover.xml'
+              format: 'clover'
+
+          - php-scrutinizer-run
+
+        after:
+          - store-in-cache repository "phpunit" vendor/bin/.phpunit/
+
+    master-tests:
+      requires:
+        - branch: master
+
+      services:
+        rabbitmq: 3.7.15-management-alpine
+
+      tests:
+        override:
+          - if [ -z "$SCRUTINIZER_PR_SOURCE_BRANCH" ]; then curl -o security-checker.phar https://get.sensiolabs.org/security-checker.phar; fi;
+          - if [ -z "$SCRUTINIZER_PR_SOURCE_BRANCH" ]; then php security-checker.phar security:check; fi;
+
+build_failure_conditions:
+  - 'elements.rating(<= D).new.exists' # No new classes/methods with a rating of D or worse.
+  - 'project.metric("scrutinizer.quality", < 8)' # Code Quality Rating drops below 8.
+  - 'project.metric("scrutinizer.test_coverage", < 0.80)' # Code Coverage drops below 80%.
