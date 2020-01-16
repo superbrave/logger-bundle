@@ -1,4 +1,9 @@
 services:
-  Superbrave\LoggerBundle\Sentry\Logger:
-    arguments:
-      - '@Sentry\State\HubInterface'
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+  Superbrave\LoggerBundle\Logger\Logger:
+      arguments:
+          $adapter: 'Superbrave\LoggerBundle\Adapter\SentryAdapter'

@@ -11,26 +11,22 @@
  * @see       https://www.superbrave.nl/
  */
 
-namespace Superbrave\LoggerBundle\Sentry;
+namespace Superbrave\LoggerBundle\Adapter;
 
-use Psr\Log\LoggerInterface;
-use Psr\Log\LoggerTrait;
 use Psr\Log\LogLevel;
 use Sentry\Severity;
 use Sentry\State\HubInterface;
 use Throwable;
 
 /**
- * Class Logger.
+ * Class SentryAdapter.
  *
- * The current logger implements Sentry
+ * This adapter can be used in the Logger to implement Sentry for logging
  *
  * @author Niels Nijens <nn@superbrave.nl>
  */
-class Logger implements LoggerInterface
+class SentryAdapter implements AdapterInterface
 {
-    use LoggerTrait;
-
     /**
      * @var HubInterface
      */
