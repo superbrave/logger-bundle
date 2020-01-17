@@ -16,14 +16,11 @@ namespace Superbrave\LoggerBundle\Tests\Logger;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LogLevel;
 use RuntimeException;
-use Sentry\Severity;
 use Superbrave\LoggerBundle\Adapter\AdapterInterface;
 use Superbrave\LoggerBundle\Logger\Logger;
 
 /**
  * LoggerTest.
- *
- * @author Niels Nijens <nn@superbrave.nl>
  */
 class LoggerTest extends TestCase
 {

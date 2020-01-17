@@ -22,8 +22,6 @@ use Throwable;
  * Class SentryAdapter.
  *
  * This adapter can be used in the Logger to implement Sentry for logging
- *
- * @author Niels Nijens <nn@superbrave.nl>
  */
 class SentryAdapter implements AdapterInterface
 {
