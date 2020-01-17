@@ -1,4 +1,10 @@
 # Logger bundle
+[![Build Status](https://scrutinizer-ci.com/g/superbrave/logger-bundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/superbrave/logger-bundle/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/superbrave/logger-bundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/superbrave/logger-bundle/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/superbrave/logger-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/superbrave/logger-bundle/?branch=master)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+
+## Introduction
 A Symfony bundle to log messages to logging providers. Such as Sentry.
 
 ## Overview
