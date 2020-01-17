@@ -61,8 +61,8 @@ class LoggerTest extends TestCase
      *
      * @dataProvider provideLogTestCases
      *
-     * @param string   $level
-     * @param string   $message
+     * @param string $level
+     * @param string $message
      */
     public function testLog(string $level, string $message): void
     {

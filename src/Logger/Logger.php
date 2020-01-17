@@ -3,9 +3,11 @@
  * This file is part of the Logger bundle.
  *
  * @category  Bundle
+ *
  * @author    SuperBrave <info@superbrave.nl>
  * @copyright 2020 SuperBrave <info@superbrave.nl>
  * @license   https://github.com/superbrave/logger-bundle/blob/master/LICENSE MIT
+ *
  * @see       https://www.superbrave.nl/
  */
 
@@ -33,7 +35,7 @@ class Logger extends AbstractLogger
     }
 
     /**
-     * Pass the message to the log method of the adapter
+     * Pass the message to the log method of the adapter.
      *
      * @param mixed  $level
      * @param string $message
@@ -45,7 +47,7 @@ class Logger extends AbstractLogger
     }
 
     /**
-     * Pass the exception to the logException method of the adapter
+     * Pass the exception to the logException method of the adapter.
      *
      * @param Throwable $exception
      */
