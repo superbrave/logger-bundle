@@ -3,9 +3,11 @@
  * This file is part of the Logger bundle.
  *
  * @category  Bundle
+ *
  * @author    SuperBrave <info@superbrave.nl>
  * @copyright 2020 SuperBrave <info@superbrave.nl>
  * @license   https://github.com/superbrave/logger-bundle/blob/master/LICENSE MIT
+ *
  * @see       https://www.superbrave.nl/
  */
 
@@ -84,7 +86,7 @@ class SentryAdapterTest extends TestCase
     }
 
     /**
-     * Returns a list with test-cases for @return array
+     * Returns a list with test-cases for @return array.
      *
      * @see testLog.
      */
