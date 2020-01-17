@@ -24,8 +24,6 @@ use Throwable;
  * Class Logger.
  *
  * The current logger implements Sentry
- *
- * @author Niels Nijens <nn@superbrave.nl>
  */
 class Logger implements LoggerInterface
 {

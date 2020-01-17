@@ -23,8 +23,6 @@ use Superbrave\LoggerBundle\Sentry\Logger;
 
 /**
  * LoggerTest.
- *
- * @author Niels Nijens <nn@superbrave.nl>
  */
 class LoggerTest extends TestCase
 {

@@ -4,10 +4,6 @@
     "type": "symfony-bundle",
     "authors": [
         {
-            "name": "Niels Nijens",
-            "email": "nn@superbrave.nl"
-        },
-        {
             "name": "Tim van den Oever",
             "email": "tvdo@superbrave.nl"
         }
