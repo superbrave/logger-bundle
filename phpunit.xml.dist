@@ -12,6 +12,7 @@
     <testsuites>
         <testsuite name="SuperbraveLoggerBundle">
             <directory>./tests/</directory>
+            <exclude>./src/DependencyInjection/</exclude>
         </testsuite>
     </testsuites>
     <filter>
