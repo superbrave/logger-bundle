@@ -11,13 +11,15 @@
         stopOnFailure="false">
     <testsuites>
         <testsuite name="SuperbraveLoggerBundle">
-            <directory>./tests/</directory>
-            <exclude>./src/DependencyInjection/</exclude>
+            <directory>tests/</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist>
-            <directory>./src/</directory>
+            <directory>src/</directory>
+            <exclude>
+                <directory>src/DependencyInjection</directory>
+            </exclude>
         </whitelist>
     </filter>
 </phpunit>
